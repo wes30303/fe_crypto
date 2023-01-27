@@ -11,15 +11,6 @@
       text-align: center;
       padding-top: 100px;
     }
-    video {
-    opacity: 0.35;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 
     /* Add custom CSS to create sticky footer */
     .center {
@@ -27,6 +18,11 @@
       top: 40%;
       width: 100%;
       text-align: center;
+      margin-top: -50px;
+      margin-bottom: -50px;
+    }
+    .text-container {
+        float: right;
     }
     .page {
       display: flex;
@@ -40,15 +36,6 @@
 </head>
 <body>
 <div class="page">
-  <video playsinline autoplay muted loop poster class playsinline="background-video">
-      <source src="https://res.cloudinary.com/dogimn7ip/video/upload/v1672050686/Bitcoin_-_63667_xhmrpm.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-  <div class="center text-center text-white">
-    <h1>Welcome To</h1>
-    <h2>The Next Generation of Crypto Trading</h2>
-    <a href="/sign_up" class="btn btn-danger mx-auto" role="button">Sign Up Here</a>
-  </div>
 
   <nav class="navbar navbar-expand-md navbar-dark bg-black">
     <a class="navbar-brand" href="/">
@@ -82,7 +69,30 @@
       </ul>
     </div>
   </nav>
+  <div class="row justify-content-center text-center text-white">
+    <div class="col-md-8">
+      <img src="https://res.cloudinary.com/dogimn7ip/image/upload/v1674517243/image0_kqkck8.png"
+      height="300"
+      class="rounded-circle mb-3">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row text-white">
+        <div class="text-container">
+          <h1 class="mb-3" style="margin-top: -90px;">Wesley Miranda</h1>
+          <div class="card bg-black p-4" style="margin-top: -10px;">
+            <p>Hello, my name is Wesley Miranda and I am a software developer based in Denver, Colorado. I am actively seeking a full-time position in the industry and would greatly appreciate any referrals or connections from recruiters. I have a strong background in project management and full-stack development, with a focus on back-end engineering. I have a proven track record of success, having worked on several notable projects, including All Note Crypto. I received my education in Back-End Software Engineering from the Turing School of Software and Design, where I gained a comprehensive understanding of various technologies and honed my skills. You can connect with me on LinkedIn to learn more about my experience and qualifications. Feel free to reach out to me there if you are interested in discussing potential opportunities.</p>
+            <a href="https://www.linkedin.com/in/wes-miranda/" class="btn btn-outline-danger btn-lg" role="button">Contact Me</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
