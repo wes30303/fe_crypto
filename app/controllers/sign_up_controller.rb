@@ -6,7 +6,8 @@ end
 def create
     new_user = User.new(user_params)
     if new_user.save
-      redirect_to '/'
+      session[:user_id] = new_user.id
+      redirect_to '/dashboard'
     end
   end
 
