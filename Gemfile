@@ -34,6 +34,7 @@ gem 'bcrypt'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
+gem 'faraday'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 5.2.2'
 gem 'jquery-rails'

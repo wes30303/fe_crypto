@@ -61,7 +61,7 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <% if current_user %>
-          <a class="btn btn-outline-success" tabindex="-1" aria-disabled="true">Account Balance $<%= @current_user.account_balance %></a>
+          <a class="btn btn-outline-light" tabindex="-1" aria-disabled="true">Account Balance $<%= @current_user.account_balance %></a>
           <a <%= link_to "Logout", logout_path, class: "btn btn-outline-danger", method: :delete %></a>
             <% else %>
             <a class="btn btn-outline-danger" href="/login" tabindex="-1" aria-disabled="true">Login</a>
@@ -89,42 +89,38 @@
   </div>
 
   <div class="container">
-  <div class="row">
-    <div class="col-12">
-		<table class="table table-image">
-		  <thead>
-		    <tr>
-		      <th scope="col">Top 7</th>
-		      <th scope="col">Image</th>
-		      <th scope="col">Crypto Name</th>
-		      <th scope="col">market_cap_rank</th>
-		      <th scope="col">price_btc</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td class="w-25">
-			      <img src="https://assets.coingecko.com/coins/images/14409/small/edgecoin_bank_logo-4_%281%29.png?1673251201">
-		      </td>
-		      <td>Magic</td>
-		      <td>122</td>
-		      <td>BTC(0.00007007272460191775)</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-          <td class="w-25">
-            <img src="https://assets.coingecko.com/coins/images/14409/small/edgecoin_bank_logo-4_%281%29.png?1673251201">
-          </td>
-          <td>Magic</td>
-          <td>122</td>
-          <td>BTC(0.00007007272460191775)</td>
-        </tr>
-		  </tbody>
-		</table>
+    <div class="row">
+      <div class="col-12">
+      <table class="table table-image text-white"">
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Market Cap Rank</th>
+            <th scope="col">Trade</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @crypto.each do |crypto| %>
+          <tr>
+            <td class="w-25">
+
+              <img
+              src= <%= crypto[:large]  %>
+              height="70"
+              alt="Logo"
+              loading="lazy">
+            </td>
+            <td><%= crypto[:name] %></td>
+            <td><%= crypto[:market_cap_rank] %></td>
+            <td><button type="button" class="btn btn-outline-light btn-sm">Trade</button></td>
+          </tr>
+          <%end%>
+        </tbody>
+      </table>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

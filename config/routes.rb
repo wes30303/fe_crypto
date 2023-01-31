@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :sign_up
   resources :dashboard
   resources :about_me
+  resources :search
   resources :pricing
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
