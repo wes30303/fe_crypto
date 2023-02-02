@@ -12,6 +12,10 @@
     tr {
       color: white;
     }
+    input[type="text"] {
+      background-color: #000;
+      color: #fff;
+    }
     h1 {
       color: white;
       text-align: center;
@@ -61,7 +65,7 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <% if current_user %>
-          <a class="btn btn-outline-light" tabindex="-1" aria-disabled="true">Account Balance $<%= @current_user.account_balance %></a>
+          <a class="btn btn-outline-danger" tabindex="-1" aria-disabled="true">Account Balance $<%= @current_user.account_balance %></a>
           <a <%= link_to "Logout", logout_path, class: "btn btn-outline-danger", method: :delete %></a>
             <% else %>
             <a class="btn btn-outline-danger" href="/login" tabindex="-1" aria-disabled="true">Login</a>
@@ -86,40 +90,48 @@
       </div>
     </div>
   </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-      <table class="table table-image text-white"">
-        <thead>
-          <tr>
-            <th scope="col">Image</th>
-            <th scope="col">Name</th>
-            <th scope="col">Market Cap Rank</th>
-            <th scope="col">Trade</th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @crypto.each do |crypto| %>
-          <tr>
-            <td class="w-25">
-
-              <img
-              src= <%= crypto[:large]  %>
-              height="70"
-              alt="Logo"
-              loading="lazy">
-            </td>
-            <td><%= crypto[:name] %></td>
-            <td><%= crypto[:market_cap_rank] %></td>
-            <td><button type="button" class="btn btn-outline-light btn-sm">Trade</button></td>
-          </tr>
-          <%end%>
-        </tbody>
-      </table>
+<div class="container">
+  <button class="btn container" style="outline: 2px solid gray; height: 35px; margin-top: 40px;"> 
+      <div class="row align-items-center text-white">
+        <div class="col-md-1">
+          <p>#</p>
+        </div>
+        <div class="col-md-1">
+          <p>Image</p>
+        </div>
+        <div class="col-md-5">
+          <p>Name</p>
+        </div>
+        <div class="col-md-5">
+          <p>Market Cap Rank</p>
+        </div>
       </div>
-    </div>
-  </div>
+  </button> 
+ <% @crypto.each_with_index do |crypto, index| %>
+    <a href="google">
+      <button class="btn container" style="background-color: #010101; border-radius: 20px; height: 50px; margin-top: 15px;"> 
+          <div class="row align-items-center text-white">
+            <div class="align-items-center col-md-1">
+              <p><%= index %></p>
+            </div>
+            <div class="align-items-center col-md-1">
+                <img
+                  src= <%= crypto[:large]  %>
+                  height="37"
+                  class="rounded-circle mb-3"
+                  style="vertical-align: middle;">
+            </div>
+            <div class="col-md-5">
+              <p><%= crypto[:name] %></p>
+            </div>
+            <div class="col-md-5">
+              <p><%= crypto[:market_cap_rank] %></p>
+            </div>
+          </div>
+      </button>
+    </a>
+  <%end%>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

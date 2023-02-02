@@ -12,6 +12,11 @@
     tr {
       color: white;
     }
+
+    input[type="text"] {
+      background-color: #000;
+      color: #fff;
+    }
     h1 {
       color: white;
       text-align: center;
@@ -61,7 +66,7 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <% if current_user %>
-          <a class="btn btn-outline-success" tabindex="-1" aria-disabled="true">Account Balance $<%= @current_user.account_balance %></a>
+          <a class="btn btn-outline-danger" tabindex="-1" aria-disabled="true">Account Balance $<%= @current_user.account_balance %></a>
           <a <%= link_to "Logout", logout_path, class: "btn btn-outline-danger", method: :delete %></a>
             <% else %>
             <a class="btn btn-outline-danger" href="/login" tabindex="-1" aria-disabled="true">Login</a>
@@ -77,54 +82,60 @@
   <% end %>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6 offset-md-3 text-center" style="margin-top: 80px;">
+      <div class="col-md-6 offset-md-3 text-center" style="margin-top: 40px;">
         <form action="/search" method="GET">
           <div class="form-group d-flex align-items-center">
-            <input type="text" class="form-control" placeholder="Search" name="search" style="border-radius: 50px; width: 80%;">
-            <button type="submit" class="btn btn-danger" style="border-radius: 50px; margin-left: -5px;">Search</button>
+            <input type="text" class="form-control" placeholder="Search" name="search" style="border-radius: 60px; width: 100%;">
           </div>
         </form>
       </div>
     </div>
   </div>
+  
+<div class="container">
+  <button class="btn container" style="outline: 2px solid gray; height: 35px; margin-top: 40px;"> 
+      <div class="row align-items-center text-white">
+        <div class="col-md-1">
+          <p>#</p>
+        </div>
+        <div class="col-md-1">
+          <p>Image</p>
+        </div>
+        <div class="col-md-5">
+          <p>Name</p>
+        </div>
+        <div class="col-md-5">
+          <p>Market Cap Rank</p>
+        </div>
+      </div>
+  </button> 
 
-  <div class="container">
-  <div class="row">
-    <div class="col-12">
-		<table class="table table-image">
-		  <thead>
-		    <tr>
-		      <th scope="col">Top 7</th>
-		      <th scope="col">Image</th>
-		      <th scope="col">Crypto Name</th>
-		      <th scope="col">market_cap_rank</th>
-		      <th scope="col">price_btc</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td class="w-25">
-			      <img src="https://assets.coingecko.com/coins/images/14409/small/edgecoin_bank_logo-4_%281%29.png?1673251201">
-		      </td>
-		      <td>Magic</td>
-		      <td>122</td>
-		      <td>BTC(0.00007007272460191775)</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-          <td class="w-25">
-            <img src="https://assets.coingecko.com/coins/images/14409/small/edgecoin_bank_logo-4_%281%29.png?1673251201">
-          </td>
-          <td>Magic</td>
-          <td>122</td>
-          <td>BTC(0.00007007272460191775)</td>
-        </tr>
-		  </tbody>
-		</table>
-    </div>
-  </div>
+  <a href="google">
+    <button class="btn container" style="background-color: #010101; border-radius: 20px; height: 50px; margin-top: 15px;"> 
+        <div class="row align-items-center text-white">
+          <div class="align-items-center col-md-1">
+            <p>1</p>
+          </div>
+          <div class="align-items-center col-md-1">
+              <img
+                src="https://assets.coingecko.com/coins/images/5/large/dogecoin.png"
+                height="37"
+                class="rounded-circle mb-3"
+                style="vertical-align: middle;">
+          </div>
+          <div class="col-md-5">
+            <p>Doge Coin</p>
+          </div>
+          <div class="col-md-5">
+            <p>1</p>
+          </div>
+        </div>
+    </button>
+  </a>
 </div>
+
+  
+
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

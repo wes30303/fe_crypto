@@ -1,5 +1,7 @@
 {
   "name": "fe_crypto",
   "private": true,
-  "dependencies": {}
+  "devDependencies": {
+    "htmlhint": "^1.1.4"
+  }
 }
